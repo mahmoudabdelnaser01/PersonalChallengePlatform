@@ -1,0 +1,286 @@
+@model PersonalChallengePlatform.Controllers.LeaderboardViewModel
+@{
+    ViewData["Title"] = "Leaderboard";
+}
+
+<style>
+    /* Leaderboard Styles */
+    .leaderboard-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px var(--shadow-color);
+        transition: all var(--transition-speed) ease;
+    }
+
+    .leaderboard-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .leaderboard-title {
+        color: var(--heading-color);
+        font-weight: 600;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .user-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        transition: all var(--transition-speed) ease;
+    }
+
+    .user-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .user-name {
+        color: var(--heading-color);
+        font-weight: 600;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .user-rank {
+        font-weight: 700;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .rank-1 { color: var(--rank-gold); }
+    .rank-2 { color: var(--rank-silver); }
+    .rank-3 { color: var(--rank-bronze); }
+
+    .user-points {
+        color: var(--points-color);
+        font-weight: 600;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .badge {
+        background-color: var(--badge-bg);
+        color: var(--badge-text);
+        transition: all var(--transition-speed) ease;
+    }
+
+    .section-title {
+        color: var(--heading-color);
+        font-weight: 600;
+        transition: color var(--transition-speed) ease;
+    }
+
+    /* Responsive Adjustments */
+    @@media (max-width: 768px) {
+        .leaderboard-card {
+            margin: 0 -15px;
+            border-radius: 0;
+        }
+        
+        .user-card {
+            margin: 0 10px;
+        }
+
+        .table {
+            font-size: 0.875rem;
+        }
+    }
+
+    /* Accessibility Improvements */
+    .leaderboard-card:focus-within {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+
+    .user-card:focus-within {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+
+    /* Loading States */
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    /* Error States */
+    .error-message {
+        color: var(--danger-color);
+        background-color: var(--card-bg);
+        border: 1px solid var(--danger-color);
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    /* Empty States */
+    .empty-state {
+        color: var(--text-color-secondary);
+        text-align: center;
+        padding: 20px;
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .user-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--card-bg);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .user-stats {
+        font-size: 0.875rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .points-label {
+        font-size: 0.75rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color var(--transition-speed) ease;
+    }
+
+    .badge-achievement {
+        background-color: var(--badge-bg);
+        color: var(--points-color);
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        transition: background-color var(--transition-speed) ease,
+                    color var(--transition-speed) ease;
+    }
+
+    .badge-achievement.champion {
+        background-color: var(--rank-gold);
+        color: #000;
+    }
+
+    .badge-achievement.elite {
+        background-color: var(--rank-silver);
+        color: #000;
+    }
+
+    .badge-achievement.advanced {
+        background-color: var(--rank-bronze);
+        color: #000;
+    }
+
+    .current-user-highlight {
+        background-color: var(--primary-color-light);
+        border-left: 4px solid var(--primary-color);
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card leaderboard-card">
+                <div class="card-header">
+                    <h3 class="card-title">Leaderboard</h3>
+                    <div class="card-tools">
+                        <span class="badge badge-primary">Total Users: @Model.TotalUsers</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @if (Model.CurrentUser != null)
+                    {
+                        <div class="alert alert-info mb-4">
+                            <div class="d-flex align-items-center">
+                                <img src="@Model.CurrentUser.AvatarUrl" alt="Your avatar" class="user-avatar me-3">
+                                <div>
+                                    <h5 class="mb-1">Your Rank: #@Model.CurrentUserRank</h5>
+                                    <p class="mb-0">Points: @Model.CurrentUser.Points | Completed Challenges: @Model.CurrentUser.CompletedChallenges</p>
+                                    <span class="badge badge-achievement @Model.CurrentUser.AchievementLevel.ToLower()">@Model.CurrentUser.AchievementLevel</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>User</th>
+                                    <th>Points</th>
+                                    <th>Challenges Completed</th>
+                                    <th>Achievement Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.TopUsers.Count; i++)
+                                {
+                                    var user = Model.TopUsers[i];
+                                    var isCurrentUser = Model.CurrentUser?.UserId == user.UserId;
+                                    <tr class="@(isCurrentUser ? "current-user-highlight" : "")">
+                                        <td>
+                                            @if (i < 3)
+                                            {
+                                                <span class="rank-@(i + 1)">#@(i + 1)</span>
+                                            }
+                                            else
+                                            {
+                                                <span>#@(i + 1)</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="@user.AvatarUrl" alt="@user.UserName's avatar" class="user-avatar me-3">
+                                                <div>
+                                                    <div class="user-name">@user.UserName</div>
+                                                    @if (isCurrentUser)
+                                                    {
+                                                        <span class="badge bg-primary">You</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="user-points">@user.Points</td>
+                                        <td>@user.CompletedChallenges</td>
+                                        <td>
+                                            <span class="badge badge-achievement @user.AchievementLevel.ToLower()">@user.AchievementLevel</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add smooth transitions when theme changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'data-theme') {
+                        document.querySelectorAll('.user-card').forEach(card => {
+                            card.style.transition = 'all var(--transition-speed) ease';
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-theme']
+            });
+        });
+    </script>
+}
+
+<meta name="robots" content="noindex, nofollow">
+
+<div class="error-container" role="alert" aria-live="polite"></div> 

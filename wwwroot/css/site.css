@@ -1,0 +1,381 @@
+:root {
+    /* Color Variables */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --text-color-secondary: #6c757d;
+    --text-color-tertiary: #adb5bd;
+    --heading-color: #212529;
+    --link-color: #0d6efd;
+    --link-hover-color: #0a58ca;
+    --error-gradient-start: #ff6b6b;
+    --error-gradient-end: #ff8e8e;
+    --card-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --suggestion-bg: #f1f1f1;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --sidebar-bg: #ffffff;
+    --topbar-bg: #ffffff;
+    --footer-bg: #212529;
+    --footer-text: #ffffff;
+    --nav-link-color: #6c757d;
+    --nav-link-hover-bg: #f8f9fa;
+    --nav-link-hover-color: #0d6efd;
+    --search-bar-bg: #f8f9fa;
+    --transition-speed: 0.3s;
+    --badge-bg: #e9ecef;
+    --badge-text: #6c757d;
+    --rank-gold: #ffd700;
+    --rank-silver: #c0c0c0;
+    --rank-bronze: #cd7f32;
+    --points-color: #0d6efd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f8f9fa;
+    --text-color-secondary: #adb5bd;
+    --text-color-tertiary: #6c757d;
+    --heading-color: #ffffff;
+    --link-color: #3d8bfd;
+    --link-hover-color: #6ea8fe;
+    --error-gradient-start: #ff4d4d;
+    --error-gradient-end: #ff6b6b;
+    --card-bg: #2d2d2d;
+    --border-color: #404040;
+    --suggestion-bg: #333333;
+    --sidebar-bg: #2d2d2d;
+    --topbar-bg: #2d2d2d;
+    --footer-bg: #1a1a1a;
+    --footer-text: #f8f9fa;
+    --nav-link-color: #adb5bd;
+    --nav-link-hover-bg: #404040;
+    --nav-link-hover-color: #3d8bfd;
+    --search-bar-bg: #404040;
+    --badge-bg: #404040;
+    --badge-text: #adb5bd;
+    --points-color: #3d8bfd;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Base Typography */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease, 
+                color var(--transition-speed) ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Form Elements */
+.form-control, .form-select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Buttons */
+.btn {
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+    transform: translateY(-1px);
+    box-shadow: var(--hover-shadow);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Navigation */
+.nav-link {
+    color: var(--nav-link-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: var(--nav-link-hover-bg);
+    color: var(--nav-link-hover-color);
+    transform: translateX(3px);
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: var(--search-bar-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.search-bar:focus {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Dropdowns */
+.dropdown-menu {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.dropdown-item {
+    color: var(--text-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--nav-link-hover-bg);
+    color: var(--nav-link-hover-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    transition: all var(--transition-speed) ease;
+}
+
+/* Utility Classes */
+.text-muted {
+    color: var(--text-color-secondary) !important;
+}
+
+.text-secondary {
+    color: var(--text-color-tertiary) !important;
+}
+
+/* Focus States */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Disabled States */
+.btn:disabled, .form-control:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.theme-toggle .form-check-input {
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.theme-toggle .form-check-label {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(45deg, var(--error-gradient-start), var(--error-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+    animation-fill-mode: both;
+}
+
+.animate-fade-in-delay-1 {
+    animation: fadeIn 1s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeIn 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+.animate-fade-in-delay-3 {
+    animation: fadeIn 1s ease-out 0.9s;
+    animation-fill-mode: both;
+}
+
+.animate-fade-in-delay-4 {
+    animation: fadeIn 1s ease-out 1.2s;
+    animation-fill-mode: both;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Topbar Styles */
+.topbar {
+    background-color: var(--topbar-bg);
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Leaderboard Styles */
+.leaderboard-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease;
+}
+
+.leaderboard-rank {
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+}
+
+.rank-1 { background-color: var(--rank-gold); color: #000; }
+.rank-2 { background-color: var(--rank-silver); color: #000; }
+.rank-3 { background-color: var(--rank-bronze); color: #000; }
+
+.badge {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+
+.badge.champion {
+    background-color: var(--rank-gold);
+    color: #000;
+}
+
+.badge.elite {
+    background-color: var(--rank-silver);
+    color: #000;
+}
+
+.badge.advanced {
+    background-color: var(--rank-bronze);
+    color: #000;
+}
+
+.points {
+    color: var(--points-color);
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+.challenges-completed {
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: color var(--transition-speed) ease;
+}

@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Personal Challenge Platform</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        :root {
+            --sidebar-width: 250px;
+            --topbar-height: 60px;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding-top: var(--topbar-height);
+            min-height: 100vh;
+        }
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-width);
+            right: 0;
+            height: var(--topbar-height);
+            background-color: var(--topbar-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 999;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link {
+            color: var(--nav-link-color);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin: 0.25rem 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--nav-link-hover-bg);
+            color: var(--nav-link-hover-color);
+        }
+
+        .nav-link i {
+            width: 24px;
+            text-align: center;
+            margin-right: 0.5rem;
+        }
+
+        .search-bar {
+            width: 300px;
+            border-radius: 20px;
+            background-color: var(--search-bar-bg);
+            border: none;
+            padding: 0.5rem 1rem;
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
+
+        .auth-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50%;
+            background-color: var(--danger-color);
+            color: white;
+            font-size: 0.75rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: var(--card-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 1rem 0;
+            margin-top: auto;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .dropdown-item {
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--nav-link-hover-bg);
+            color: var(--nav-link-hover-color);
+        }
+
+        .btn {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        @@media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .topbar {
+                left: 0;
+            }
+
+            .search-bar {
+                width: 200px;
+            }
+        }
+    </style>
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="p-3">
+            <a class="navbar-brand d-flex align-items-center mb-4" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-trophy me-2 text-primary"></i>
+                <span class="fw-bold">Challenge Platform</span>
+            </a>
+            <nav class="nav flex-column">
+                <a class="nav-link @((ViewContext.RouteData.Values["Action"]?.ToString() ?? "") == "Index" && (ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "Home" ? "active" : "")" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a class="nav-link @((ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "Dashboard" ? "active" : "")" asp-controller="Dashboard" asp-action="Index">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link @((ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "Challenge" ? "active" : "")" asp-controller="Challenge" asp-action="Index">
+                    <i class="fas fa-tasks"></i>
+                    <span>Challenges</span>
+                </a>
+                <a class="nav-link @((ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "Progress" ? "active" : "")" asp-controller="Progress" asp-action="Index">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Progress</span>
+                </a>
+                <a class="nav-link @((ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "Leaderboard" ? "active" : "")" asp-controller="Leaderboard" asp-action="Index">
+                    <i class="fas fa-medal"></i>
+                    <span>Leaderboard</span>
+                </a>
+                <li class="nav-item">
+                    <a class="nav-link @((ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "Category" ? "active" : "")" 
+                       asp-controller="Category" asp-action="Index">
+                        <i class="fas fa-tags me-2"></i>Categories
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @((ViewContext.RouteData.Values["Controller"]?.ToString() ?? "") == "UserSettings" ? "active" : "")" 
+                       asp-controller="UserSettings" asp-action="Index">
+                        <i class="fas fa-cog me-2"></i>Settings
+                    </a>
+                </li>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar d-flex align-items-center px-4">
+        <div class="d-flex align-items-center">
+            <button class="btn btn-link d-md-none me-3" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+            </div>
+        </div>
+        <div class="ms-auto d-flex align-items-center">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="@(string.IsNullOrEmpty(User.FindFirst("AvatarUrl")?.Value) ? "/images/default-avatar.jpg" : User.FindFirst("AvatarUrl")?.Value)" 
+                             alt="Profile" class="user-avatar me-2" 
+                             onerror="this.src='/images/default-avatar.jpg'">
+                        <span class="d-none d-md-inline">@User.FindFirst("FirstName")?.Value</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" asp-controller="UserSettings" asp-action="Index"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="auth-button btn btn-outline-primary btn-sm me-2">
+                    <i class="fas fa-sign-in-alt auth-icon"></i>
+                    <span class="d-none d-md-inline">Login</span>
+                </a>
+                <a asp-controller="Account" asp-action="Register" class="auth-button btn btn-primary btn-sm">
+                    <i class="fas fa-user-plus auth-icon"></i>
+                    <span class="d-none d-md-inline">Register</span>
+                </a>
+            }
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid py-4">
+            @RenderBody()
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; @DateTime.Now.Year - Personal Challenge Platform. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,34 @@
+@model PersonalChallengePlatform.Models.Progress
+
+@{
+    ViewData["Title"] = "Add Progress";
+}
+
+<div class="container">
+    <h1>Add Progress</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <input type="hidden" asp-for="ChallengeId" />
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Notes" class="control-label"></label>
+                    <textarea asp-for="Notes" class="form-control" rows="5"></textarea>
+                    <span asp-validation-for="Notes" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Add Progress" class="btn btn-success" />
+                    <a asp-controller="Challenge" asp-action="Details" asp-route-id="@Model.ChallengeId" class="btn btn-secondary">Back to Challenge</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

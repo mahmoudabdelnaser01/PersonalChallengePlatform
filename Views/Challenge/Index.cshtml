@@ -1,0 +1,125 @@
+@model PersonalChallengePlatform.Models.ViewModels.ChallengeViewModel
+
+@{
+    ViewData["Title"] = "Challenges";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>My Challenges</h2>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> New Challenge
+        </a>
+    </div>
+
+    <!-- Challenge Filters -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <select class="form-select" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                        <option value="upcoming">Upcoming</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search challenges...">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-secondary w-100" id="clearFilters">
+                        <i class="fas fa-times"></i> Clear Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Challenges Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var challenge in Model.Challenges)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title">@challenge.Title</h5>
+                            <span class="badge bg-primary">@challenge.Category.Name</span>
+                        </div>
+                        <p class="card-text text-muted">@challenge.Description</p>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">
+                                <i class="fas fa-calendar"></i> 
+                                @challenge.StartDate.ToString("MMM dd") - @challenge.EndDate.ToString("MMM dd")
+                            </small>
+                            <div class="btn-group">
+                                <a asp-action="Details" asp-route-id="@challenge.Id" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@challenge.Id" class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@challenge.Id" class="btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (!Model.Challenges.Any())
+    {
+        <div class="text-center py-5">
+            <i class="fas fa-tasks fa-3x text-muted mb-3"></i>
+            <h4>No challenges found</h4>
+            <p class="text-muted">Create your first challenge to get started!</p>
+            <a asp-action="Create" class="btn btn-primary mt-3">
+                <i class="fas fa-plus"></i> Create Challenge
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Add JavaScript for filtering and search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilter = document.getElementById('categoryFilter');
+            const statusFilter = document.getElementById('statusFilter');
+            const searchInput = document.getElementById('searchInput');
+            const clearFilters = document.getElementById('clearFilters');
+
+            function applyFilters() {
+                // Implement filter logic here
+            }
+
+            categoryFilter.addEventListener('change', applyFilters);
+            statusFilter.addEventListener('change', applyFilters);
+            searchInput.addEventListener('input', applyFilters);
+            clearFilters.addEventListener('click', function() {
+                categoryFilter.value = '';
+                statusFilter.value = '';
+                searchInput.value = '';
+                applyFilters();
+            });
+        });
+    </script>
+} 

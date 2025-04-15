@@ -1,0 +1,289 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PersonalChallengePlatform.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PersonalChallengePlatform.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\css\\bootstrap.min(1).css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min(1).css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\images\\default-avatar.jpg",
+      "PackagePath": "staticwebassets\\images\\default-avatar.jpg"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\images\\hero-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\hero-bg.jpg"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\uploads\\profile-pictures\\5dcbe5a8-c75a-4a8a-b4fb-1dfc8a3529f7_638802075086650992.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profile-pictures\\5dcbe5a8-c75a-4a8a-b4fb-1dfc8a3529f7_638802075086650992.jpg"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\uploads\\profile-pictures\\a5e101c5-5809-43ff-8800-fd1eb9bf2cc1_638802758433809374.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profile-pictures\\a5e101c5-5809-43ff-8800-fd1eb9bf2cc1_638802758433809374.jpg"
+    },
+    {
+      "Id": "E:\\Desktop\\SWD Project - Copy\\PersonalChallengePlatform\\PersonalChallengePlatform\\wwwroot\\uploads\\profiles\\aca8b7cf-5a67-4d38-a8eb-d745a902ce85_638803451075019023.jpg",
+      "PackagePath": "staticwebassets\\uploads\\profiles\\aca8b7cf-5a67-4d38-a8eb-d745a902ce85_638803451075019023.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PersonalChallengePlatform.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PersonalChallengePlatform.props",
+      "PackagePath": "build\\PersonalChallengePlatform.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PersonalChallengePlatform.props",
+      "PackagePath": "buildMultiTargeting\\PersonalChallengePlatform.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PersonalChallengePlatform.props",
+      "PackagePath": "buildTransitive\\PersonalChallengePlatform.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

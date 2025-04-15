@@ -1,0 +1,251 @@
+﻿@model IEnumerable<PersonalChallengePlatform.Models.Challenge>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section text-center">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h1 class="display-2 mb-3 text-white hero-title">Challenge Yourself to Greatness</h1>
+                    <h2 class="display-4 mb-4 text-white hero-title-ar">أَحَبُّ الأعمالِ إلى اللهِ أدْومُها و إن قَلَّ</h2>
+                    <p class="lead mb-3 text-white">Track your progress, achieve your goals, and join a community of achievers.</p>
+                    <p class="lead mb-4 text-white arabic-text">تتبع تقدمك، حقق أهدافك، وانضم إلى مجتمع المنجزين</p>
+                    @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <a href="@Url.Action("Index", "Dashboard")" class="btn btn-primary btn-lg">Go to Dashboard</a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Register", "Account")" class="btn btn-primary btn-lg">Get Started</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-flag fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">Create Challenges</h5>
+                    <p class="card-text">Define your personal challenges with goals, timeframes, and milestones.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-success"></i>
+                    <h5 class="card-title">Track Progress</h5>
+                    <p class="card-text">Monitor your achievements and stay motivated with visual progress tracking.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 feature-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-users fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title">Join the Community</h5>
+                    <p class="card-text">Connect with others, share experiences, and get inspired.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .hero-section {
+            position: relative;
+            background-image: url('/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-top: -1.5rem;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 4rem 0;
+        }
+
+        .hero-title {
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title-ar {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .arabic-text {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            direction: rtl;
+        }
+
+        .lead {
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            background-color: #007bff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+            background-color: #0056b3;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        @@media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-title-ar {
+                font-size: 2rem;
+            }
+            .lead {
+                font-size: 1.2rem;
+            }
+            .btn-primary {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // Add Cairo font for Arabic text
+        if (!document.querySelector('link[href*="Cairo"]')) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap';
+            document.head.appendChild(link);
+        }
+    </script>
+}
+
+<!-- Dashboard Preview -->
+<div class="container">
+    <div class="row">
+        <!-- Active Challenges -->
+        <div class="col-lg-8">
+            <h2 class="mb-4">Active Challenges</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card challenge-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">30-Day Fitness Challenge</h5>
+                                <span class="badge bg-primary">Active</span>
+                            </div>
+                            <p class="card-text">Complete daily workouts and track your fitness progress over 30 days.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="days-remaining">15 days remaining</span>
+                                <div class="progress w-50">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card challenge-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">Reading Marathon</h5>
+                                <span class="badge bg-primary">Active</span>
+                            </div>
+                            <p class="card-text">Read 10 books in 3 months and share your insights with the community.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="days-remaining">45 days remaining</span>
+                                <div class="progress w-50">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Chart -->
+        <div class="col-lg-4">
+            <div class="progress-chart">
+                <h3 class="mb-4">Progress Overview</h3>
+                <div class="mb-4">
+                    <h6 class="text-muted mb-2">Monthly Completion Rate</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
+                    </div>
+                    <small class="text-muted">75% of challenges completed</small>
+                </div>
+                <div class="mb-4">
+                    <h6 class="text-muted mb-2">Streak</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"></div>
+                    </div>
+                    <small class="text-muted">12 days streak</small>
+                </div>
+                <div>
+                    <h6 class="text-muted mb-2">Community Rank</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%"></div>
+                    </div>
+                    <small class="text-muted">Top 15% of users</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

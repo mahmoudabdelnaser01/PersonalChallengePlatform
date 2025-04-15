@@ -1,0 +1,252 @@
+@model UserSettingsViewModel
+@{
+    ViewData["Title"] = "User Settings";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="@(string.IsNullOrEmpty(Model.AvatarUrl) ? "/images/default-avatar.svg" : Model.AvatarUrl)" 
+                         class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;" 
+                         alt="Profile Picture" />
+                    
+                    <form asp-action="UploadProfilePicture" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="profilePicture" class="form-label">Change Profile Picture</label>
+                            <input type="file" class="form-control" id="profilePicture" name="profilePicture" 
+                                   accept="image/jpeg,image/png" required />
+                            <small class="form-text text-muted">Maximum size: 2MB. Accepted formats: JPG, PNG</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload Picture</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="settingsTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#profile" type="button" role="tab">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="appearance-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#appearance" type="button" role="tab">Appearance</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="security-tab" data-bs-toggle="tab" 
+                                    data-bs-target="#security" type="button" role="tab">Security</button>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-body">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+                    
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @TempData["ErrorMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+                    
+                    <div class="tab-content" id="settingsTabsContent">
+                        <!-- Profile Tab -->
+                        <div class="tab-pane fade show active" id="profile" role="tabpanel">
+                            <form asp-action="UpdateProfile" method="post">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="hidden" asp-for="ProfilePictureUrl" />
+                                
+                                <div class="mb-3">
+                                    <label asp-for="Email" class="form-label"></label>
+                                    <input asp-for="Email" class="form-control" readonly>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label asp-for="Bio" class="form-label"></label>
+                                    <textarea asp-for="Bio" class="form-control" rows="4"></textarea>
+                                    <span asp-validation-for="Bio" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label asp-for="PhoneNumber" class="form-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control">
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label asp-for="Location" class="form-label"></label>
+                                    <input asp-for="Location" class="form-control">
+                                    <span asp-validation-for="Location" class="text-danger"></span>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Appearance Tab -->
+                        <div class="tab-pane fade" id="appearance" role="tabpanel">
+                            <form asp-action="UpdateProfile" method="post">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="hidden" asp-for="ProfilePictureUrl" />
+                                
+                                <div class="mb-3">
+                                    <label asp-for="SelectedTheme" class="form-label"></label>
+                                    <select asp-for="SelectedTheme" class="form-select" asp-items="@(new SelectList(UserSettingsViewModel.ThemeOptions, "Key", "Value"))">
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input asp-for="EnableEmailNotifications" class="form-check-input" type="checkbox">
+                                        <label asp-for="EnableEmailNotifications" class="form-check-label"></label>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Security Tab -->
+                        <div class="tab-pane fade" id="security" role="tabpanel">
+                            <form asp-action="UpdatePassword" method="post">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="hidden" asp-for="ProfilePictureUrl" />
+                                
+                                <div class="mb-3">
+                                    <label asp-for="CurrentPassword" class="form-label"></label>
+                                    <input asp-for="CurrentPassword" class="form-control" type="password">
+                                    <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label asp-for="NewPassword" class="form-label"></label>
+                                    <input asp-for="NewPassword" class="form-control" type="password">
+                                    <span asp-validation-for="NewPassword" class="text-danger"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                                    <input asp-for="ConfirmPassword" class="form-control" type="password">
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Change Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+        
+        // Theme persistence
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeSelect = document.getElementById('SelectedTheme');
+            const body = document.documentElement;
+            const themeStorageKey = 'userTheme';
+            
+            // Function to apply theme
+            function applyTheme(theme) {
+                body.setAttribute('data-theme', theme);
+                localStorage.setItem(themeStorageKey, theme);
+            }
+            
+            // Load saved theme or use default
+            const savedTheme = localStorage.getItem(themeStorageKey);
+            if (savedTheme) {
+                applyTheme(savedTheme);
+                if (themeSelect) {
+                    themeSelect.value = savedTheme;
+                }
+            } else if (themeSelect) {
+                applyTheme(themeSelect.value);
+            }
+            
+            // Handle theme changes
+            if (themeSelect) {
+                themeSelect.addEventListener('change', function() {
+                    applyTheme(this.value);
+                });
+            }
+
+            // Profile picture validation
+            const profilePictureForm = document.getElementById('profilePictureForm');
+            const profilePictureInput = document.getElementById('profilePictureInput');
+            const profilePictureError = document.getElementById('profilePictureError');
+            const updatePictureBtn = document.getElementById('updatePictureBtn');
+            const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB in bytes
+            const ALLOWED_TYPES = ['image/jpeg', 'image/png'];
+
+            function validateProfilePicture(file) {
+                // Check file type
+                if (!ALLOWED_TYPES.includes(file.type)) {
+                    profilePictureError.textContent = 'Please upload a valid image file (JPG, JPEG, or PNG).';
+                    profilePictureError.style.display = 'block';
+                    return false;
+                }
+
+                // Check file size
+                if (file.size > MAX_FILE_SIZE) {
+                    profilePictureError.textContent = 'File size must be less than 2MB.';
+                    profilePictureError.style.display = 'block';
+                    return false;
+                }
+
+                // Clear any previous errors
+                profilePictureError.style.display = 'none';
+                return true;
+            }
+
+            // Validate on file selection
+            profilePictureInput.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    validateProfilePicture(file);
+                }
+            });
+
+            // Validate before form submission
+            profilePictureForm.addEventListener('submit', function(e) {
+                const file = profilePictureInput.files[0];
+                if (file && !validateProfilePicture(file)) {
+                    e.preventDefault();
+                }
+            });
+
+            // Preview image before upload
+            profilePictureInput.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file && validateProfilePicture(file)) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = profilePictureForm.querySelector('img');
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+} 

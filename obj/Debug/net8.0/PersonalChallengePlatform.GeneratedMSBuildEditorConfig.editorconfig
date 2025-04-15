@@ -1,0 +1,119 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PersonalChallengePlatform
+build_property.RootNamespace = PersonalChallengePlatform
+build_property.ProjectDir = E:\Desktop\SWD Project - Copy\PersonalChallengePlatform\PersonalChallengePlatform\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Desktop\SWD Project - Copy\PersonalChallengePlatform\PersonalChallengePlatform
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Challenge/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbGxlbmdlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Challenge/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbGxlbmdlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Challenge/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbGxlbmdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Leaderboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhZGVyYm9hcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Progress/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3Jlc3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Progress/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3Jlc3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/Forbidden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvcmJpZGRlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/InternalServerError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEludGVybmFsU2VydmVyRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/UserSettings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclNldHRpbmdzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Desktop/SWD Project - Copy/PersonalChallengePlatform/PersonalChallengePlatform/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-vx6zt1uskd

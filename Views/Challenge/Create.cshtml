@@ -1,0 +1,94 @@
+@model PersonalChallengePlatform.Models.ViewModels.ChallengeCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Challenge";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center mb-0">Create New Challenge</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post" id="createChallengeForm">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" class="form-control" placeholder="Enter challenge title" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Describe your challenge"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="StartDate" class="form-label"></label>
+                                <input asp-for="StartDate" class="form-control date-input" type="date" />
+                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="EndDate" class="form-label"></label>
+                                <input asp-for="EndDate" class="form-control date-input" type="date" />
+                                <span asp-validation-for="EndDate" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="CategoryId" class="form-label"></label>
+                            <select asp-for="CategoryId" asp-items="Model.Categories" class="form-select">
+                                <option value="">-- Select Category --</option>
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Create Challenge</button>
+                            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            // Set minimum date for start date to today
+            var today = new Date().toISOString().split('T')[0];
+            $('#StartDate').attr('min', today);
+
+            // Update end date minimum when start date changes
+            $('#StartDate').change(function() {
+                var startDate = $(this).val();
+                $('#EndDate').attr('min', startDate);
+                
+                // If end date is before start date, update it
+                var endDate = $('#EndDate').val();
+                if (endDate < startDate) {
+                    $('#EndDate').val(startDate);
+                }
+            });
+
+            // Set initial dates if not set
+            if (!$('#StartDate').val()) {
+                $('#StartDate').val(today);
+            }
+            if (!$('#EndDate').val()) {
+                var thirtyDaysFromNow = new Date();
+                thirtyDaysFromNow.setDate(thirtyDaysFromNow.getDate() + 30);
+                $('#EndDate').val(thirtyDaysFromNow.toISOString().split('T')[0]);
+            }
+        });
+    </script>
+} 
