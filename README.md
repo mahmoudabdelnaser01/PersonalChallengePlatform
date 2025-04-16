@@ -86,10 +86,4 @@ A web application for tracking personal challenges, progress, and achievements. 
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 **Made with ❤️ by Mahmoud Abdel Nasser** 
